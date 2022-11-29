@@ -137,7 +137,6 @@ export const DialogCurrency = (props) => {
             <View style={styles.search}>
                 <View style={[styles.textInputContainer, searchStyle]}>
                     <TextInput
-                        autoFocus
                         onChangeText={(text) => handleFilterChange(text)}
                         value={search}
                         placeholder={searchPlaceholder}
