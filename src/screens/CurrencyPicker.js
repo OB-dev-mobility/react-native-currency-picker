@@ -82,10 +82,7 @@ export const CurrencyPicker = (props) => {
 
     return (
         <View>
-            {enable ? <TouchableOpacity
-                onPress={() => { setVisible(true); onOpen && onOpen() }}
-                style={[Styles.justifyContent, container]}
-            >
+            {enable ? <View style={[Styles.justifyContent, container]} >
                 {renderChildren ? renderChildren : <View style={{ flexDirection: "row" }}>
                     {showFlag && <CurrencyFlag currency={code} width={flagWidth} />}
                     {showCurrencyCode && <Text style={[styles.txtCurrencyCode, currencyCodeStyle]}>{code}</Text>}
@@ -93,7 +90,7 @@ export const CurrencyPicker = (props) => {
                     {showSymbol && <Text style={[styles.txtCountryName, symbolStyle]}>{symbol}</Text>}
                     {showNativeSymbol && <Text style={[styles.txtCountryName, symbolNativeStyle]}>{symbolNative}</Text>}
                 </View>}
-            </TouchableOpacity> : null}
+            </View> : null}
             <Modal
                 visible={visible}
             >
